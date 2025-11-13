@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catálogo Digital - Pastillería</title>
-  <style>
+  <title>Catálogo Digital - Pastilleria</title>
+    <style>
     body {
       font-family: "Poppins", Arial, sans-serif;
       margin: 0;
@@ -15,23 +15,34 @@
       color: #333;
     }
 
+    /* 🔹 Menú lateral azul */
     nav {
       width: 240px;
       background-color: #1a73e8;
       color: white;
       flex-shrink: 0;
-      height: 100vh;
+      min-height: 120vh; /* Más largo para pantallas verticales */
       position: fixed;
       left: 0;
       top: 0;
       overflow-y: auto;
       padding-top: 60px;
+      padding-bottom: 80px; /* Espacio adicional al final */
       border-radius: 0 20px 20px 0;
       transition: transform 0.3s ease;
       box-shadow: 3px 0 8px rgba(0,0,0,0.1);
     }
 
-    nav.oculto { transform: translateX(-100%); }
+    /* 🔹 Ajuste automático en horizontal */
+    @media (orientation: landscape) {
+      nav {
+        min-height: 100vh;
+      }
+    }
+
+    nav.oculto {
+      transform: translateX(-100%);
+    }
 
     nav h2 {
       text-align: center;
@@ -88,7 +99,9 @@
       width: 100%;
     }
 
-    main.expandido { margin-left: 0; }
+    main.expandido {
+      margin-left: 0;
+    }
 
     header {
       text-align: center;
@@ -109,30 +122,41 @@
       letter-spacing: 0.5px;
     }
 
+    /* 🔹 Barra de búsqueda más larga y limpia */
     .busqueda {
-      max-width: 500px;
-      margin: 0 auto 25px;
       display: flex;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto 25px;
+      gap: 10px;
+      width: 75%;
     }
 
     .busqueda input {
       flex: 1;
-      padding: 10px 15px;
-      border: none;
+      padding: 13px 18px;
+      border: 2px solid #1a73e8;
+      border-radius: 30px;
       outline: none;
-      font-size: 15px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      background-color: #f9fbff;
+    }
+
+    .busqueda input:focus {
+      box-shadow: 0 0 8px rgba(26, 115, 232, 0.4);
+      background-color: #fff;
     }
 
     .busqueda button {
       background-color: #1a73e8;
       color: white;
       border: none;
-      padding: 0 18px;
+      padding: 12px 22px;
+      border-radius: 50%;
       cursor: pointer;
+      font-size: 18px;
       transition: background 0.3s;
     }
 
@@ -140,7 +164,7 @@
       background-color: #0d3f84;
     }
 
-    /* Catálogo con 5 columnas máximas */
+    /* 🔹 Catálogo */
     .catalogo {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -204,8 +228,18 @@
     }
 
     @media (max-width: 768px) {
-      nav { transform: translateX(-100%); }
-      main { margin-left: 0; }
+      nav {
+        transform: translateX(-100%);
+      }
+
+      main {
+        margin-left: 0;
+      }
+
+      .busqueda {
+        max-width: 100%;
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -218,10 +252,11 @@
     <h2>Secciones</h2>
     <ul>
       <li><a href="inicio.html">Inicio</a></li>
-      <li><a href="pasteleria.html">Pastillería</a></li>
-      <li><a href="electrodomesticos.html">Electrodomésticos</a></li>
-      <li><a href="ropa.html">Ropa</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="index.html">Medicamentos</a></li>
+      <li><a href="Alimentos.html">Alimentos</a></li>
+      <li><a href="Aseo hogar.html">Aseo hogar</a></li>
+      <li><a href="Aseo Personal.html">Aseo Personal</a></li>
+      <li><a href="Cacharreria.html">Cacharreria</a></li>
     </ul>
   </nav>
 
@@ -240,9 +275,9 @@
 
       <div class="producto">
         <div class="tarjeta">
-          <img src="MANIZALES/PASTILLERIA/NAPROXENO_DE_500_LA_PROFF.jpg" alt="NAPROXENO_DE_500_LA_PROFF">
+          <img src="MANIZALES/PASTILLERIA/NAPROXENO_DE_500_LA_PROFF.jpg" alt="/NAPROXENO_DE_500_LA_PROFF">
         </div>
-        <div class="nombre-producto">NAPROXENO DE 500 MG LAPROFF</div>
+        <div class="nombre-producto">NAPROXENO DE 500 LA PROFF</div>
       </div>
 
       <div class="producto">
